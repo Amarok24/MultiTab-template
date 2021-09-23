@@ -1,0 +1,92 @@
+<html xmlns='http://www.w3.org/1999/xhtml' lang='en'>
+
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+
+  <title>MultiTab Template</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #ebebeb;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+      border: thin solid #bababa;
+      box-shadow: 3px 3px 5px #bababa;
+      background-color: #fdfdfd;
+      color: #404040;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    #cardButtons > * {
+      display: inline-block;
+      margin: 3px;
+      padding: 5px 20px;
+      border: 1px solid blue;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .selected {
+      background-color: deeppink;
+    }
+
+    .cardContent {
+      padding: 1em;
+      background-color: darkseagreen;
+    }
+
+    .d-none {
+      display: none;
+    }
+  </style>
+
+
+  <script type='module' src='dist/main.js'>
+  </script>
+
+</head>
+
+<body>
+
+  <div class='container'>
+
+    <h1>MultiTab Template</h1>
+
+<!--
+    <nav id='cardButtons'>
+      <button class="selected">N 1</button>
+      <button>N 2</button>
+      <button>N 3</button>
+      <button>N 4</button>
+      <button>N 5</button>
+    </nav>
+-->
+
+    <nav id='cardButtons'>
+      <a href='#' class="selected">N 1</a>
+      <a href='#'>N 2</a>
+      <a href='#'>N 3</a>
+      <a href='#'>N 4</a>
+      <a href='#'>N 5</a>
+    </nav>
+
+
+    <section class='cardContent'>N 1 content</section>
+    <section class='cardContent'>N 2 content</section>
+    <section class='cardContent'>N 3 content</section>
+    <section class='cardContent'>N 4 content</section>
+    <section class='cardContent'>N 5 content</section>
+
+  </div>
+
+</body>
+
+</html>
