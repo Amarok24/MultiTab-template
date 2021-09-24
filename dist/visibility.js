@@ -1,4 +1,4 @@
-export { elementHide, elementShow, elementToggle, cssClassAdd, cssClassRemove, cssClassToggle };
+export { elementHide, elementShow, elementToggle, nodeListShow, nodeListHide, cssClassAdd, cssClassRemove, cssClassToggle };
 const cssDisplayNone = 'd-none';
 function elementShow(elem) {
     elem?.classList.remove(cssDisplayNone);
@@ -8,6 +8,20 @@ function elementHide(elem) {
 }
 function elementToggle(elem) {
     elem?.classList.toggle(cssDisplayNone);
+}
+function nodeListShow(list) {
+    if (list.length === 0)
+        return;
+    for (let i = 0; i < list.length; i++) {
+        elementShow(list[i]);
+    }
+}
+function nodeListHide(list) {
+    if (list.length === 0)
+        return;
+    for (let i = 0; i < list.length; i++) {
+        elementHide(list[i]);
+    }
 }
 function cssClassAdd(elem, className) {
     elem?.classList.add(className);

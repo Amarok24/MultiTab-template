@@ -1,6 +1,6 @@
 /*
 MultiTab Template
-Version 0.1
+Version 0.2
 Copyright 2021 Jan Prazak, https://github.com/Amarok24
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,16 +17,10 @@ limitations under the License.
 import { Globals } from "./globals.js";
 import * as v from "./visibility.js";
 
-const g = new Globals();
+const queryToNavElements = '#cardButtons a';
+const queryToCardElements = '.cardContent';
 
-
-function hideAllCards(contentElems: NodeListOf<HTMLElement>): void {
-  if (contentElems.length === 0) return;
-
-  for (let i = 0; i < contentElems.length; i++) {
-    v.elementHide(contentElems[i]);
-  }
-}
+const g = new Globals(queryToNavElements, queryToCardElements);
 
 
 function coupleNavAndCards(
@@ -37,7 +31,7 @@ function coupleNavAndCards(
   function onNavButtonClick(index: number, ev: Event): void {
     ev.preventDefault();
 
-    hideAllCards(g.allCards);
+    v.nodeListHide(g.allCards);
     v.elementShow(g.allCards[index]);
 
     for (let i = 0; i < navElems.length; i++) {
@@ -55,5 +49,5 @@ function coupleNavAndCards(
 // ===== INIT =====
 
 coupleNavAndCards(g.allNavButtons, g.allCards);
-hideAllCards(g.allCards);
+v.nodeListHide(g.allCards);
 v.elementShow(g.allCards[0]);

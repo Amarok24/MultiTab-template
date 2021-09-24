@@ -1,6 +1,6 @@
 /*
 MultiTab Template
-Version 0.1
+Version 0.2
 Copyright 2021 Jan Prazak, https://github.com/Amarok24
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +18,8 @@ export {
   elementHide,
   elementShow,
   elementToggle,
+  nodeListShow,
+  nodeListHide,
   cssClassAdd,
   cssClassRemove,
   cssClassToggle
@@ -36,6 +38,22 @@ function elementHide(elem: HTMLElement | null): void {
 
 function elementToggle(elem: HTMLElement | null): void {
   elem?.classList.toggle(cssDisplayNone);
+}
+
+function nodeListShow<T extends HTMLElement = HTMLElement>(list: NodeListOf<T>): void {
+  if (list.length === 0) return;
+
+  for (let i = 0; i < list.length; i++) {
+    elementShow(list[i]);
+  }
+}
+
+function nodeListHide<T extends HTMLElement = HTMLElement>(list: NodeListOf<T>): void {
+  if (list.length === 0) return;
+
+  for (let i = 0; i < list.length; i++) {
+    elementHide(list[i]);
+  }
 }
 
 function cssClassAdd(elem: HTMLElement | null, className: string): void {

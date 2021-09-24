@@ -1,6 +1,6 @@
 /*
 MultiTab Template
-Version 0.1
+Version 0.2
 Copyright 2021 Jan Prazak, https://github.com/Amarok24
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +18,12 @@ export { Globals };
 
 
 class Globals {
-  // Note: 'querySelectorAll' returns NodeListOf<E>
 
-  //allNavButtons = document.querySelectorAll<HTMLElement>('#cardButtons button');
-  allNavButtons = document.querySelectorAll<HTMLElement>('#cardButtons a');
-  allCards = document.querySelectorAll<HTMLElement>('.cardContent');
+  public allNavButtons: NodeListOf<HTMLElement>;
+  public allCards: NodeListOf<HTMLElement>;
+
+  constructor(queryNavButtons: string, queryCards: string) {
+    this.allNavButtons = document.querySelectorAll<HTMLElement>(queryNavButtons);
+    this.allCards = document.querySelectorAll<HTMLElement>(queryCards);
+  }
 }

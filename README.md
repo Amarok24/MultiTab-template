@@ -1,6 +1,6 @@
 # MultiTab Template
 A very simple "plugin" for multi-tab page content (navigation + corresponding content).
-All content is shown if JavaScript is disabled (useful for accessibility readers).
+All content is shown if JavaScript is disabled (useful for legacy browsers or accessibility readers).
 
 ## Note
 index.html needs to run in a live-server environment (because JS modules are used).
